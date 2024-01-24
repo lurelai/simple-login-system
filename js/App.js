@@ -7,19 +7,8 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 app.get('/', (req, res)=>{
-    res.sendFile( path.join(__dirname, '../index.html') )
+    res.sendFile( path.join(__dirname, '../views/index.html') )
 })
-
-app.post('/form', (req, res)=>{
-    const { nome, senha } = req.body
-
-    if(nome === 'Lucas' && senha === 'senha')
-        res.send('okay')
-
-    else
-        res.send('not correct')
-
-})
-
+    
 app.listen(8080)
 
